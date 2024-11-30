@@ -1175,6 +1175,68 @@
          console.log('\n');
          
          
+         function reverseStringWithLoop(str) {
+             let reverseString = '';
+             for (let i = str.length - 1; i >= 0; i--) {
+                 reverseString += str[i];
+             }
+             return reverseString;
+             
+         }//end of reverseStringWithLoop Function
+         
+         const string1 = 'Geeks For Geeks';
+         console.log(`the string ${string1} reversed is `,reverseStringWithLoop(string1));
+         console.log('\n');
+         
+         function reverseString(str) {
+             return str.split('').reverse().join('');
+             
+         }//end of reverseString Function
+         
+         const string2 = 'Hello MERN Class';
+         console.log(`the string ${string2} reversed is `, reverseString(string2));
+         console.log('\n');
+         
+         function removeZerosAndReplaceWithFiveAtEnd(array) {
+             let currentIndex = 0;
+             for (let i = 0; i < array.length; i++) {
+                 if (array[i] != 0) {
+                     array[currentIndex] = array[i];
+                     currentIndex++;
+                 }
+             }
+             for (let i = currentIndex; i < array.length; i++) {
+                 array[i] = 5;
+             }
+             
+         }//end of replaceZerosWithFives Function
+         
+         
+         const triangleNumbers = [0, 1, 0, 0, 3, 0, 6, 10, 0, 15, 21, 0, 28, 0, 0, 36];
+         
+         console.log(`Array before removeZerosAndReplaceWithFiveAtEnd`,triangleNumbers);
+         removeZerosAndReplaceWithFiveAtEnd(triangleNumbers);
+         console.log(`Array after removeZerosAndReplaceWithFiveAtEnd`,triangleNumbers);
+         
+         function replaceZerosWithFives(number) {
+             let numberString = number.toString();
+             let numberSplit = numberString.split('');
+             
+             for (let i = 0; i < numberSplit.length; i++) {
+                 if (numberSplit[i] == 0) {
+                     numberSplit[i] = 5;
+                 }
+             }
+             let numberJoined = numberSplit.join('').replace(',');
+             
+             return parseInt(numberJoined);
+         }
+         
+         let number19 = 10023;
+         
+         console.log(`number ${number19} before function replaceZerosWithFives`, number19);
+         console.log(`number ${number19} after function replaceZerosWithFives`, replaceZerosWithFives(number19));
+         console.log('\n');
          
       </script>
    </body>
