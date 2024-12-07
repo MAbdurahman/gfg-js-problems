@@ -951,7 +951,7 @@
              
          }//end of factorialIteration Function
          
-         const number5 = 4;
+         const number5 = 5;
          console.log(`factorialIteration - factorialization of ${number5} is: `, factorialIteration(number5));
          console.log('\n');
          
@@ -1236,10 +1236,59 @@
          
          let number19 = 10023;
          
+         
          console.log(`number ${number19} before function replaceZerosWithFives`, number19);
          console.log(`number ${number19} after function replaceZerosWithFives`, replaceZerosWithFives(number19));
          console.log('\n');
          
+     function findIndex(str, subStr) {
+         let index = -1;
+         if (str.includes(subStr)) {
+             index = (str.indexOf(subStr));
+         }
+         return index;
+     }//end of findIndex Function
+     
+     let ans = findIndex("hello", "llo");
+         console.log(ans)
+       ans = findIndex("World","Doodle" )
+         console.log(ans)
+         
+         
+         function findSum(n) {
+             let sum = 0;
+             for (let i = 1; i <= n; i++) {
+                sum += i;
+             }
+             console.log('sum', sum)
+         }
+         console.log(ans)
+         findSum(100);
+         
+         function convertDecimalToBinary(decimal) {
+             let number = decimal;
+             let binary = '';
+             
+             while (number > 0) {
+                 if (number % 2 == 1) {
+                     binary = '1' + binary;
+                     
+                 } else {
+                     binary = '0' + binary;
+                 }
+                 number = Math.floor(number / 2);
+             }
+             return binary;
+         }
+         
+         let binary = "101101";
+         let decimal = parseInt(binary, 2);
+         console.log(`the binary number ${binary} to decimal is ${decimal}`);
+         
+         console.log('\n');
+         let base2 = convertDecimalToBinary(11);
+         console.log(`the decimal number ${decimal} to binary is ${base2}`);
+       
       </script>
    </body>
 </html>
