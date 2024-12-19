@@ -1050,6 +1050,7 @@
       
          const number9 = 5400;
          console.log(`the prime factors of ${number9} is: `, getPrimeFactors(number9));
+         console.log(getPrimeFactors(number9).toString().replace(/,/g, ' '));
          console.log('\n');
          
          /**
@@ -1193,9 +1194,17 @@
              
          }//end of reverseString Function
          
+         
          const string2 = 'Hello MERN Class';
          console.log(`the string ${string2} reversed is `, reverseString(string2));
          console.log('\n');
+         
+         function areAnagrams(str1, str2) {
+             let result = '';
+             
+             let string1 = [...str1];
+             console.log(string1);
+         }
          
          function removeZerosAndReplaceWithFiveAtEnd(array) {
              let currentIndex = 0;
@@ -1288,7 +1297,359 @@
          console.log('\n');
          let base2 = convertDecimalToBinary(11);
          console.log(`the decimal number ${decimal} to binary is ${base2}`);
-       
+         
+         function getVolumeOfCube(number) {
+             return number * number * number;
+         }
+        console.log(getVolumeOfCube(5));
+         
+         function getVolumeOfRectangle(length, width, height) {
+             return length * width * height;
+         }
+         
+         console.log(getVolumeOfRectangle(18, 12, 1));
+         
+         
+         function printLowercaseOrUppercase(option) {
+             
+             let alphabets = [];
+             let i;
+             let j;
+             //if the option is uppercase set the i & j to A to Z
+             if (option === 'uppercase') {
+                  i = 65;
+                  j = 91;
+             }
+             
+             
+             //if the option is lowercase set the value of i,j to print a to z
+             if(option === 'lowercase'){
+                  /*i = 97;*/
+                 i =  97;
+                  /*j = 123;*/
+                 j = 123;
+             }
+             
+             //loop through the values from i to j
+             for(let k = i; k < j; k++) {
+                 //convert the char code to string (Alphabets)
+                 let str = String.fromCharCode(k);
+                 //print the result in console
+                 /*console.log(str);*/
+                 alphabets.push(str);
+             }
+             console.log(alphabets.toString().replace(/,/g, ' '));
+         }
+         
+         printLowercaseOrUppercase('uppercase');
+         console.log('\n');
+         
+         function printSomeAlphabets(c1, c2) {
+             let someAlphabets = [];
+             let i;
+             let j;
+             if (c1 === 'a') {
+                 i = 97;
+             } else if (c1 === 'b') {
+                 i = 98;
+             } else if (c1 === 'c') {
+                 i = 99;
+             } else if (c1 === 'd') {
+                 i = 100;
+             } else if (c1 === 'e') {
+                 i = 101;
+             } else if (c1 === 'f') {
+                 i = 102;
+             } else if (c1 === 'g') {
+                 i = 103;
+             } else if (c1 === 'h') {
+                 i = 104;
+             } else if (c1 === 'i') {
+                 i = 105;
+             } else if (c1 === 'j') {
+                 i = 106;
+             } else if (c1 === 'k') {
+                 i = 107;
+             } else if (c1 === 'l') {
+                 i = 108;
+             } else if (c1 === 'm') {
+                 i = 109;
+             } else if (c1 === 'n') {
+                 i = 110;
+             } else if (c1 === 'o') {
+                 i = 111;
+             } else if (c1 === 'p') {
+                 i = 112;
+             } else if (c1 === 'q') {
+                 i = 113;
+             } else if (c1 === 'r') {
+                 i = 114;
+             } else if (c1 === 's') {
+                 i = 115;
+             } else if (c1 === 't') {
+                 i = 116;
+             } else if (c1 === 'u') {
+                 i = 117;
+             } else if (c1 === 'v') {
+                 i = 118;
+             } else if (c1 === 'w') {
+                 i = 119;
+             } else if (c1 === 'x') {
+                 i = 120;
+             } else if (c1 === 'y') {
+                 i = 121;
+             } else if (c1 === 'z') {
+                 i = 122;
+             } else {
+                 console.log('');
+             }
+             
+             if (c2 === 'a') {
+                 j = 97;
+             } else if (c2 === 'b') {
+                 j = 98;
+             } else if (c2 === 'c') {
+                 j = 99;
+             } else if (c2 === 'd') {
+                 j = 100;
+             } else if (c2 === 'e') {
+                 j = 101;
+             } else if (c2 === 'f') {
+                 j = 102;
+             } else if (c2 === 'g') {
+                 j = 103;
+             } else if (c2 === 'h') {
+                 j = 104;
+             } else if (c2 === 'i') {
+                 j = 105;
+             } else if (c2 === 'j') {
+                 j = 106;
+             } else if (c2 === 'k') {
+                 j = 107;
+             } else if (c2 === 'l') {
+                 j = 108;
+             } else if (c2 === 'm') {
+                 j = 109;
+             } else if (c2 === 'n') {
+                 j = 110;
+             } else if (c2 === 'o') {
+                 j = 111;
+             } else if (c2 === 'p') {
+                 j = 112;
+             } else if (c2 === 'q') {
+                 j = 113;
+             } else if (c2 === 'r') {
+                 j = 114;
+             } else if (c2 === 's') {
+                 j = 115;
+             } else if (c2 === 't') {
+                 j = 116;
+             } else if (c2 === 'u') {
+                 j = 117;
+             } else if (c2 === 'v') {
+                 j = 118;
+             } else if (c2 === 'w') {
+                 j = 119;
+             } else if (c2 === 'x') {
+                 j = 120;
+             } else if (c2 === 'y') {
+                 j = 121;
+             } else if (c2 === 'z') {
+                 j = 122;
+             } else {
+                 console.log('')
+             }
+             
+             
+             for (let k = i; k <= j; k++) {
+                 let str = String.fromCharCode(k);
+                 someAlphabets.push(str);
+             }
+             console.log(someAlphabets.toString().replace(/,/g, ' '));
+         }
+         
+         printSomeAlphabets('f', 'l' );
+         
+         function printAlphabets(c1, c2) {
+             let alphabet = []
+             for (let i = c1.charCodeAt(0); i <= c2.charCodeAt(0); i++) {
+                  let str = (String.fromCharCode(i));
+                  alphabet.push(str);
+             }
+             
+             console.log(alphabet.toString().split(',').join(''));
+         }
+         
+         console.log('************************')
+         printAlphabets('a', 'h');
+         
+         
+         function findExtraCharacter(str1, str2) {
+             let char = '';
+             let sortedStr1Arr = str1.split('').sort();
+             let sortedStr2Arr = str2.split('').sort();
+             
+             
+             console.log(sortedStr1Arr)
+             console.log(sortedStr2Arr)
+             for (let i = 0; i < sortedStr2Arr.length; i++) {
+                if (sortedStr1Arr[i] !== (sortedStr2Arr[i])) {
+                    char = sortedStr2Arr[i];
+                    break;
+                }
+             }
+             console.log(char)
+             return char;
+         }
+         
+         
+         findExtraCharacter('abdc', 'badce')
+         findExtraCharacter('efg', 'gtfe')
+         findExtraCharacter('aty', 'faty')
+         
+         /**
+          * Arrays in JavaScript are ordered collections of data that can store
+          * multiple values under a single variable name. They are flexible,
+          * allowing for different data types and dynamic resizing, and can be
+          * manipulated using various built-in methods.
+          */
+         const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+         let removedPlant = plants.pop();
+         console.log(removedPlant);
+         console.log(plants);
+         console.log('\n');
+         removedPlant = plants.shift();
+         console.log(removedPlant);
+         console.log(plants);
+         
+         
+         console.log('\n\n');
+         const months = ['Jan', 'March', 'April', 'June'];
+         months.splice(1, 0, 'Feb');
+         // Inserts at index 1
+         console.log(months);
+         // Expected output: Array ["Jan", "Feb", "March", "April", "June"]
+         
+         months.splice(4, 1, 'May');
+         // Replaces 1 element at index 4
+         console.log(months);
+         // Expected output: Array ["Jan", "Feb", "March", "April", "May"]
+         
+         
+         const array10 = [5, 12, 8, 130, 44];
+         
+         let index = 2;
+         
+         console.log(`An index of ${index} returns ${array10.at(index)}`);
+         // Expected output: "An index of 2 returns 8"
+         
+         index = -1;
+         
+         console.log(`An index of ${index} returns ${array1.at(index)}`);
+         // Expected output: "An index of -2 returns 130"
+         
+         
+         const array4 = ['a', 'b', 'c'];
+         const array2 = ['d', 'e', 'f'];
+         const array3 = array4.concat(array2);
+         
+         console.log(array3);
+         // Expected output: Array ["a", "b", "c", "d", "e", "f"]
+         
+         
+         const months2 = ["Mar", "Jan", "Feb", "Dec"];
+         const sortedMonths = months2.toSorted();
+         console.log(sortedMonths); // ['Dec', 'Feb', 'Jan', 'Mar']
+         console.log(months2); // ['Mar', 'Jan', 'Feb', 'Dec']
+         
+         const values = [1, 10, 21, 2];
+         const sortedValues = values.toSorted((a, b) => a < b);
+         console.log(sortedValues); // [1, 2, 10, 21]
+         console.log(values); // [1, 10, 21, 2]
+         
+         let someRandomNumber = Math.floor(Math.random() * 10 + 1);
+         
+         console.log(someRandomNumber);
+         
+         
+         const array11 = ['a', 'b', 'c'];
+         const array12 = ['d', 'e', 'f'];
+         const array13 = array11.concat(array12);
+         
+         console.log('array11: ' + array11);
+         console.log('array12: ' + array12);
+         console.log('array11.concat(array12): ' + array13);
+         // Expected output: Array ["a", "b", "c", "d", "e", "f"]
+         
+         
+         console.log('\n\n');
+         console.log('array.entries()')
+         const array14 = ['a', 'b', 'c', 'd', 'e', 'f'];
+         
+         const iterator12 = array14.entries();
+         
+         console.log(iterator12.next().value);
+         // Expected output: Array [0, "a"]
+         
+         console.log(iterator12.next().value);
+         // Expected output: Array [1, "b"]
+         
+         // console.log(iterator12.next());
+         // while (iterator12) {
+         //     console.log(iterator12.next().value);
+         // }
+         console.log('\n');
+         const arrayEntries = array14.entries();
+         
+         
+         
+         
+         for (const element of arrayEntries) {
+             console.log(element);
+         }
+         
+         
+         console.log('\n');
+         console.log('array[Symbol.iterator]();');
+         
+         const array15 = ['w', 'x', 'y', 'z'];
+         const iterator1 = array15[Symbol.iterator]();
+         for (const value of iterator1) {
+             console.log(value);
+         }
+         
+         console.log('\n\n');
+         function areAnagrams(str1, str2) {
+             
+             if (str1.length !== str2.length) {
+                 return false;
+             }
+             
+             let sortedString1 = str1.split('').sort().join('');
+             let sortedString2 = str2.split('').sort().join('');
+             
+             if (sortedString1 !== sortedString2) {
+                 return false;
+             }
+             
+             return true;
+             
+         }//end of areAnagrams Function
+         
+         
+         console.log(areAnagrams('racecar', 'racearc'));
+         
+         console.log('*************************');
+         console.log('iteraing over a string');
+         
+         let message = "I am learning JavaScript";
+         
+         // Iterate over each character in the string
+         for (let i = 0; i < message.length; i++) {
+             console.log(message[i]);
+         }
+         console.log('***** printing message on one line');
+         console.log(message);
       </script>
    </body>
 </html>
