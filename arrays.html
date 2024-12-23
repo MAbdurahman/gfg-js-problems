@@ -779,11 +779,215 @@
 
       <script>
          /*===========================================================================
-            a brief description
+            Arrays in JavaScripts
          ==============================================================================*/
-
-
-
+         /**
+          * Arrays in JavaScript are ordered collections of data that can store
+          * multiple values under a single variable name. They are flexible,
+          * allowing for different data types and dynamic resizing, and can be
+          * manipulated using various built-in methods.
+          */
+         const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+         /**
+          * The pop() method of Array instances removes the last element from an array and returns that element. This method changes the length of the array.
+          */
+         let removedPlant = plants.pop();
+         console.log(removedPlant);
+         console.log(plants);
+         console.log('\n');
+         
+         /**
+          * The shift() method of Array instances removes the first element from an array and returns that removed element. This method changes the length of the array.
+          */
+         removedPlant = plants.shift();
+         console.log(removedPlant);
+         console.log(plants);
+         
+         /**
+          * The splice() method of Array instances changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+          */
+         console.log('\n\n');
+         const months = ['Jan', 'March', 'April', 'June'];
+         
+         
+         months.splice(1, 0, 'Feb');
+         // Inserts at index 1
+         console.log(months);
+         // Expected output: Array ["Jan", "Feb", "March", "April", "June"]
+         
+         months.splice(4, 1, 'May');
+         // Replaces 1 element at index 4
+         console.log(months);
+         // Expected output: Array ["Jan", "Feb", "March", "April", "May"]
+         
+         /**
+          * The at() method of Array instances takes an integer value and returns the item at that index, allowing for positive and negative integers. Negative integers count back from the last item in the array.
+          */
+         const array10 = [5, 12, 8, 130, 44];
+         
+         let index = 2;
+         
+         console.log(array10);
+         
+         console.log(`An index of ${index} returns ${array10.at(index)}`);
+         // Expected output: "An index of 2 returns 8"
+         
+         index = -1;
+         
+         console.log(`An index of ${index} returns ${array10.at(index)}`);
+         // Expected output: "An index of -2 returns 130"
+         
+         /**
+          * The concat() method of Array instances is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+          */
+         const array4 = ['a', 'b', 'c'];
+         const array2 = ['d', 'e', 'f'];
+         const array3 = array4.concat(array2);
+         
+         console.log(array3);
+         // Expected output: Array ["a", "b", "c", "d", "e", "f"]
+         
+         /**
+          * The toSorted() method of Array instances is the copying version of the sort() method. It returns a new array with the elements sorted in ascending order.
+          */
+         const months2 = ["Mar", "Jan", "Feb", "Dec"];
+         const sortedMonths = months2.toSorted();
+         console.log(sortedMonths); // ['Dec', 'Feb', 'Jan', 'Mar']
+         console.log(months2); // ['Mar', 'Jan', 'Feb', 'Dec']
+         
+         const values = [1, 10, 21, 2];
+         const sortedValues = values.toSorted((a, b) => a < b);
+         console.log(sortedValues); // [1, 2, 10, 21]
+         console.log(values); // [1, 10, 21, 2]
+         
+         let someRandomNumber = Math.floor(Math.random() * 10 + 1);
+         
+         console.log(someRandomNumber);
+         
+         
+         const array11 = ['a', 'b', 'c'];
+         const array12 = ['d', 'e', 'f'];
+         const array13 = array11.concat(array12);
+         
+         console.log('array11: ' + array11);
+         console.log('array12: ' + array12);
+         console.log('array11.concat(array12): ' + array13);
+         // Expected output: Array ["a", "b", "c", "d", "e", "f"]
+         
+         
+         console.log('\n\n');
+         console.log('array.entries()')
+         const array14 = ['a', 'b', 'c', 'd', 'e', 'f'];
+         
+         const iterator12 = array14.entries();
+         
+         console.log(iterator12.next().value);
+         // Expected output: Array [0, "a"]
+         
+         console.log(iterator12.next().value);
+         // Expected output: Array [1, "b"]
+         
+         // console.log(iterator12.next());
+         // while (iterator12) {
+         //     console.log(iterator12.next().value);
+         // }
+         console.log('\n');
+         const arrayEntries = array14.entries();
+         
+         
+         
+         
+         for (const element of arrayEntries) {
+             console.log(element);
+         }
+         
+         
+         console.log('\n');
+         console.log('array[Symbol.iterator]();');
+         
+         const array15 = ['w', 'x', 'y', 'z'];
+         const iterator1 = array15[Symbol.iterator]();
+         for (const value of iterator1) {
+             console.log(value);
+         }
+         
+         console.log('\n\n');
+         let studentNames = ["Prakash", "Ashish", "Via", "Adarsh"];
+         for (let name of studentNames) {
+             console.log(name);
+         }
+         // Output: "Prakash", "Ashish", "Via", "Adarsh"
+         
+         console.log('*******************arrays in JavaScript*****************');
+         
+         var numArr = [2, 5, 8, 1, 4]
+         console.log(numArr.sort(function(a, b) {
+             /*return a + 2 * b;*/
+             return a - b;
+         }));
+         console.log(numArr);
+         
+         function sumOfNumbers(n) {
+             if (n % 2 === 0) {
+                 return (n / 2) * (n + 1);
+             } else {
+                 return ((n + 1) /2) * n;
+             }
+         }//end of sumOfNumbers Function
+         
+         
+         let number1 = 5;
+         let answer1 = sumOfNumbers(number1);
+         console.log(`the sum of ${number1} numbers is: `, answer1);
+         
+         let number2 = 472994162;
+         let answer2 = sumOfNumbers(number2);
+         console.log(`the sum of ${number2} numbers is: `, answer2.toPrecision(18));
+         
+         console.log('\n\n');
+         console.log('***************iterating over arrays in JavaScript**************');
+        const childrenNames = ['Prakash', 'Ashish', 'Via', 'Adam'];
+         console.log('iterating over array with for of');
+        for (let name of childrenNames) {
+            console.log(name);
+        }
+         console.log('\n');
+         console.log('iterating over array with for in');
+        for (let index in childrenNames) {
+            console.log(index);
+        }
+        
+        
+        
+        function getArea(radius) {
+            return Math.PI * radius **2;
+        }
+        
+        function getDiameter(radius) {
+            return radius * 2;
+        }
+        
+        function getCircumference(radius) {
+            return 2 * Math.PI * radius;
+        }
+        
+        
+        class SomeClass {
+            constructor(x1, y1, x2, y2) {
+                this.x1 = x1;
+                this.y1 = y1;
+                this.x2 = x2;
+                this.y2 = y2;
+            }
+            getDistance() {
+                return Math.sqrt((this.x2 - this.x1)** 2 +(this.y2 - this.y1)** 2)
+                
+            }
+        }
+        
+             
+        
+        
       </script>
    </body>
 

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -848,7 +847,7 @@
           * @param arr
           * @returns {*}
           */
-         function getLargestNumber(arr) {
+         function getLargestNumber(numArr) {
             let largestNumber = Number.MIN_VALUE;
              for (let i = 0; i < arr.length; i++) {
                  if (largestNumber < arr[i]) {
@@ -869,7 +868,7 @@
           * @param arr
           * @returns {number}
           */
-         function getSmallestNumber(arr) {
+         function getSmallestNumber(numArr) {
              let smallestNumber = Number.MAX_VALUE;
              for (let i = 0; i < arr.length; i++) {
                  if (smallestNumber > arr[i]) {
@@ -889,7 +888,7 @@
           * @param arr
           * @returns {number[]}
           */
-         function getLargestTwoNumbers(arr) {
+         function getLargestTwoNumbers(numArr) {
              let maxOne = Number.MIN_VALUE;
              let maxTwo = Number.MIN_VALUE;
              
@@ -911,7 +910,7 @@
           * @param arr
           * @returns {number[]}
           */
-         function getMinAndMaxValue(arr) {
+         function getMinAndMaxValue(numArr) {
              let maxValue = Number.MIN_VALUE;
              let minValue = Number.MAX_VALUE;
              arr.forEach((value) => {
@@ -1058,7 +1057,7 @@
           * @param arr
           * @returns {*}
           */
-         function swapNumbers(arr) {
+         function swapNumbers(numArr) {
              return arr.reverse();
              
          }//end of swapNumbers Function
@@ -1507,118 +1506,7 @@
          findExtraCharacter('efg', 'gtfe')
          findExtraCharacter('aty', 'faty')
          
-         /**
-          * Arrays in JavaScript are ordered collections of data that can store
-          * multiple values under a single variable name. They are flexible,
-          * allowing for different data types and dynamic resizing, and can be
-          * manipulated using various built-in methods.
-          */
-         const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
-         let removedPlant = plants.pop();
-         console.log(removedPlant);
-         console.log(plants);
-         console.log('\n');
-         removedPlant = plants.shift();
-         console.log(removedPlant);
-         console.log(plants);
-         
-         
-         console.log('\n\n');
-         const months = ['Jan', 'March', 'April', 'June'];
-         months.splice(1, 0, 'Feb');
-         // Inserts at index 1
-         console.log(months);
-         // Expected output: Array ["Jan", "Feb", "March", "April", "June"]
-         
-         months.splice(4, 1, 'May');
-         // Replaces 1 element at index 4
-         console.log(months);
-         // Expected output: Array ["Jan", "Feb", "March", "April", "May"]
-         
-         
-         const array10 = [5, 12, 8, 130, 44];
-         
-         let index = 2;
-         
-         console.log(`An index of ${index} returns ${array10.at(index)}`);
-         // Expected output: "An index of 2 returns 8"
-         
-         index = -1;
-         
-         console.log(`An index of ${index} returns ${array1.at(index)}`);
-         // Expected output: "An index of -2 returns 130"
-         
-         
-         const array4 = ['a', 'b', 'c'];
-         const array2 = ['d', 'e', 'f'];
-         const array3 = array4.concat(array2);
-         
-         console.log(array3);
-         // Expected output: Array ["a", "b", "c", "d", "e", "f"]
-         
-         
-         const months2 = ["Mar", "Jan", "Feb", "Dec"];
-         const sortedMonths = months2.toSorted();
-         console.log(sortedMonths); // ['Dec', 'Feb', 'Jan', 'Mar']
-         console.log(months2); // ['Mar', 'Jan', 'Feb', 'Dec']
-         
-         const values = [1, 10, 21, 2];
-         const sortedValues = values.toSorted((a, b) => a < b);
-         console.log(sortedValues); // [1, 2, 10, 21]
-         console.log(values); // [1, 10, 21, 2]
-         
-         let someRandomNumber = Math.floor(Math.random() * 10 + 1);
-         
-         console.log(someRandomNumber);
-         
-         
-         const array11 = ['a', 'b', 'c'];
-         const array12 = ['d', 'e', 'f'];
-         const array13 = array11.concat(array12);
-         
-         console.log('array11: ' + array11);
-         console.log('array12: ' + array12);
-         console.log('array11.concat(array12): ' + array13);
-         // Expected output: Array ["a", "b", "c", "d", "e", "f"]
-         
-         
-         console.log('\n\n');
-         console.log('array.entries()')
-         const array14 = ['a', 'b', 'c', 'd', 'e', 'f'];
-         
-         const iterator12 = array14.entries();
-         
-         console.log(iterator12.next().value);
-         // Expected output: Array [0, "a"]
-         
-         console.log(iterator12.next().value);
-         // Expected output: Array [1, "b"]
-         
-         // console.log(iterator12.next());
-         // while (iterator12) {
-         //     console.log(iterator12.next().value);
-         // }
-         console.log('\n');
-         const arrayEntries = array14.entries();
-         
-         
-         
-         
-         for (const element of arrayEntries) {
-             console.log(element);
-         }
-         
-         
-         console.log('\n');
-         console.log('array[Symbol.iterator]();');
-         
-         const array15 = ['w', 'x', 'y', 'z'];
-         const iterator1 = array15[Symbol.iterator]();
-         for (const value of iterator1) {
-             console.log(value);
-         }
-         
-         console.log('\n\n');
+
          function areAnagrams(str1, str2) {
              
              if (str1.length !== str2.length) {
@@ -1639,17 +1527,7 @@
          
          console.log(areAnagrams('racecar', 'racearc'));
          
-         console.log('*************************');
-         console.log('iteraing over a string');
          
-         let message = "I am learning JavaScript";
-         
-         // Iterate over each character in the string
-         for (let i = 0; i < message.length; i++) {
-             console.log(message[i]);
-         }
-         console.log('***** printing message on one line');
-         console.log(message);
       </script>
    </body>
 </html>

@@ -4,7 +4,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Strings In JavaScript</title>
+      <title>Title Of Javascript</title>
       <style>
           @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
           @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
@@ -460,7 +460,7 @@
             --clr-blue-01-900: hsl(210, 64%, 23%);
 
 
-            /*************************** augumented colors ***************************/
+            /*************************** augmented colors ***************************/
             --clr-augmented-000: hsl(210, 12%, 98%);
             --clr-augmented-100: hsl(210, 12%, 88%);
             --clr-augmented-200: hsl(210, 12%, 78%);
@@ -770,7 +770,7 @@
       <main class="main">
          <section class="utils-container section">
             <div class="main-section">
-               <h1 class="heading-primary">Strings In JavaScript</h1>
+               <h1 class="heading-primary">Classes In JavaScript</h1>
                <h5 class="special-heading">Press F12 on the keyboard to view JavaScript in the console view</h5>
             </div>
          </section>
@@ -779,194 +779,11 @@
 
       <script>
          /*===========================================================================
-                Strings in JavaScript
+                classes in JavaScript
          ==============================================================================*/
-         console.log('iterating over a string');
-         
-         let message = "I am learning JavaScript";
-         
-         // Iterate over each character in the string
-         for (let i = 0; i < message.length; i++) {
-             console.log(message[i]);
-         }
-         console.log('***** printing message on one line');
-         console.log(message);
-         
-         console.log('\n');
-         console.log(' Breaking the Loop on a Specific Character');
-         console.log('Suppose we want to stop iterating when we encounter the character \'n\':');
-         console.log('\n');
-         for (let i = 0; i < message.length; i++) {
-             if (message[i] === 'n') {
-                 break;
-             }
-             console.log(message[i]);
-         }
-         let superString = "hello";
-         console.log(superString.charCodeAt(0));
 
-         console.log('\n');
-         console.log(' Counting Occurrences of a Character');
-         console.log('Let\'s count how many times the character \'a\' appears in the string:');
-         console.log('\n');
-         let count = 0;
-         
-         for (let i = 0; i < message.length; i++) {
-             if (message[i] === 'a') {
-                 count++;
-             }
-         }
-         
-         console.log("The character 'a' appears " + count + " times.");
-         console.log('\n');
-         console.log('Using Index to Print Specific Characters');
-         console.log('Now, let\'s use the index to print specific characters. We will print the character at index 1, 2, and 3.');
-         console.log('\n');
-         console.log(message[1]); // Prints ' '
-         console.log(message[2]); // Prints 'a'
-         console.log(message[3]); // Prints 'm'
-         /**
-          * Using the for...of Loop
-          * The for...of loop is a cleaner and more readable way to iterate over the elements of an iterable object, such as a string.
-          */
-         console.log('Using for...of to Print Each Character');
-         console.log('\n');
-         for (let char of message) {
-             console.log(char);
-         }
-         
-         //Practical Use Cases
-         console.log('\n');
-         console.log('Finding the Index of a Character');
-         console.log('You might want to find the position of a character within a string.')
-         console.log('\n');
-         for (let i = 0; i < message.length; i++) {
-             if (message[i] === 'a') {
-                 console.log("Index of 'a': " + i);
-             }
-         }
-         
-         console.log('\n');
-         console.log('Filtering Characters');
-         console.log('Suppose we want to create a new string containing only the vowels from the original string.');
-         console.log('\n');
-         let vowels = '';
-         const vowelSet = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
-         
-         for (let char of message) {
-             if (vowelSet.has(char)) {
-                 vowels += char + ' ';
-             }
-         }
-         
-         console.log(`the vowels in '${message}' are: `,vowels);
-         
-         
-         function countNumberOfWords(string) {
-             return string.trim().split(' ').length;
-             
-         }//end of countNumberOfWords Function
-         
-         console.log('\n');
-         let words = 'Geeks For Geeks';
-         console.log(countNumberOfWords(words));
-         
-         console.log('\n');
-         function getSubstring(str, start, end) {
-             return str.substring(start, end +1);
-         }
-         let str1 = "cdbkdub";
-         let start = 2;
-         let end = 3;
-         let substring = getSubstring(str1, start, end);
-         console.log(substring);
-         console.log('**********first occurrence');
-         function firstOccurrence(txt, pat) {
-             let result = -1;
-             for (let i = 0; i < txt.length; i++) {
-                 if (txt.includes(pat)) {
-                     result = txt.indexOf(pat);
-                     break;
-                 }
-             }
-             return result;
-         }
-         let str2 = 'Geeks For Geeks';
-         let pat2 = 'For';
-         
-         console.log(firstOccurrence(str2, pat2));
-         console.log('****************is string a pangram');
-         function isPangram(str) {
-             const alphabets = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-             
-             const lowercaseString = str.toLowerCase();
-             
-            const results = alphabets.every(alphabet => lowercaseString.includes(alphabet));
-            return results ? 1 : 0;
-         }
-         let str3 = 'Thequickbrownfoxjumpsoverthelazydog';
-         let str4 = 'HeavyDuty';
-         console.log(isPangram(str3));
-         console.log(isPangram(str4));
-         
-         
-         function isPalindrome(str) {
-             if (str.length === 1) {
-                return true;
-             }
-             let reverseString = str.split('').reverse().join('');
-             for (let i = 0; i < reverseString.length; i++) {
-                 if (reverseString[i] !== str[i]) {
-                     return false;
-                 }
-             }
-             return true;
-         }//end of isPalindrome Function
 
-         console.log(isPalindrome('racecar'));
-         
-         function removeFirstAndLastChar(str) {
-             if (str.length > 2) {
-                 
-                 let newString = str.slice(1);
-                 
-                 return newString.slice(0, -1);
-             }
-         }//end of removeFirstAndLastChar Function
-         
-         console.log(removeFirstAndLastChar('hello'));
-         
-         console.log('***************padEnd Method');
-         const str34 = 'Breaded Mushrooms';
-         console.log('Breaded Mushrooms has a length of ', str34.length);
-         console.log(str34.padEnd(25, '.'));
-         // Expected output: "Breaded Mushrooms........"
-         
-         const str35 = '200';
-         
-         console.log(str35.padEnd(5, '*'));
-         // Expected output: "200**"
-         console.log('\n\n');
-         console.log('******************repeat Method');
-         const mood = 'Happy! ';
-         
-         console.log(`I feel ${mood.repeat(3)}`);
-         // Expected output: "I feel Happy! Happy! Happy! "
-         
-         console.log('*****************split method');
-         const str36 = 'The quick brown fox jumps over the lazy dog.';
-         
-         const moreWords = str36.split(' ');
-         console.log(moreWords[3]);
-         // Expected output: "fox"
-         
-         const chars = str36.split('');
-         console.log(chars[8]);
-         // Expected output: "k"
-         
-         const strCopy = str36.split();
-         console.log(strCopy);
-         // Expected output: Array ["The quick brown fox jumps over the lazy dog."]
+
       </script>
    </body>
 
