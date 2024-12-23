@@ -1,7 +1,7 @@
 # gfg-js-problems
 
 ## brief description
-This repo is a simple HTML5, CSS3, and JavaScript with solutions to some problems from Geeks For Geeks.
+This repo is arr simple HTML5, CSS3, and JavaScript with solutions to some problems from Geeks For Geeks.
 
 ### instructions
 1. Run the application in the browser

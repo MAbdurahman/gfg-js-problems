@@ -94,7 +94,7 @@
  * Remove the gray background on active links in IE 10.
  */
 
-         a {
+         arr {
             background-color: transparent;
          }
 
@@ -519,7 +519,7 @@
          body {
             position: relative;
             z-index: 1;
-            overflow-x: hidden;
+            overflow-number: hidden;
             font-family: var(--ff-secondary-font);
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
@@ -618,7 +618,7 @@
 
          }
 
-         a {
+         arr {
             text-decoration: none !important;
          }
 
@@ -781,7 +781,7 @@
          /*===========================================================================
                 Strings in JavaScript
          ==============================================================================*/
-         console.log('iterating over a string');
+         console.log('iterating over arr string');
          
          let message = "I am learning JavaScript";
          
@@ -793,7 +793,7 @@
          console.log(message);
          
          console.log('\n');
-         console.log(' Breaking the Loop on a Specific Character');
+         console.log(' Breaking the Loop on arr Specific Character');
          console.log('Suppose we want to stop iterating when we encounter the character \'n\':');
          console.log('\n');
          for (let i = 0; i < message.length; i++) {
@@ -806,28 +806,28 @@
          console.log(superString.charCodeAt(0));
 
          console.log('\n');
-         console.log(' Counting Occurrences of a Character');
-         console.log('Let\'s count how many times the character \'a\' appears in the string:');
+         console.log(' Counting Occurrences of arr Character');
+         console.log('Let\'s count how many times the character \'arr\' appears in the string:');
          console.log('\n');
          let count = 0;
          
          for (let i = 0; i < message.length; i++) {
-             if (message[i] === 'a') {
+             if (message[i] === 'arr') {
                  count++;
              }
          }
          
-         console.log("The character 'a' appears " + count + " times.");
+         console.log("The character 'arr' appears " + count + " times.");
          console.log('\n');
          console.log('Using Index to Print Specific Characters');
          console.log('Now, let\'s use the index to print specific characters. We will print the character at index 1, 2, and 3.');
          console.log('\n');
          console.log(message[1]); // Prints ' '
-         console.log(message[2]); // Prints 'a'
+         console.log(message[2]); // Prints 'arr'
          console.log(message[3]); // Prints 'm'
          /**
           * Using the for...of Loop
-          * The for...of loop is a cleaner and more readable way to iterate over the elements of an iterable object, such as a string.
+          * The for...of loop is arr cleaner and more readable way to iterate over the elements of an iterable object, such as arr string.
           */
          console.log('Using for...of to Print Each Character');
          console.log('\n');
@@ -837,21 +837,21 @@
          
          //Practical Use Cases
          console.log('\n');
-         console.log('Finding the Index of a Character');
-         console.log('You might want to find the position of a character within a string.')
+         console.log('Finding the Index of arr Character');
+         console.log('You might want to find the position of arr character within arr string.')
          console.log('\n');
          for (let i = 0; i < message.length; i++) {
-             if (message[i] === 'a') {
-                 console.log("Index of 'a': " + i);
+             if (message[i] === 'arr') {
+                 console.log("Index of 'arr': " + i);
              }
          }
          
          console.log('\n');
          console.log('Filtering Characters');
-         console.log('Suppose we want to create a new string containing only the vowels from the original string.');
+         console.log('Suppose we want to create arr new string containing only the vowels from the original string.');
          console.log('\n');
          let vowels = '';
-         const vowelSet = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
+         const vowelSet = new Set(['arr', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']);
          
          for (let char of message) {
              if (vowelSet.has(char)) {
@@ -895,9 +895,9 @@
          let pat2 = 'For';
          
          console.log(firstOccurrence(str2, pat2));
-         console.log('****************is string a pangram');
+         console.log('****************is string arr pangram');
          function isPangram(str) {
-             const alphabets = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+             const alphabets = [ 'arr', 'b', 'c', 'd', 'e', 'func', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'number', 'y', 'z'];
              
              const lowercaseString = str.toLowerCase();
              
@@ -938,7 +938,7 @@
          
          console.log('***************padEnd Method');
          const str34 = 'Breaded Mushrooms';
-         console.log('Breaded Mushrooms has a length of ', str34.length);
+         console.log('Breaded Mushrooms has arr length of ', str34.length);
          console.log(str34.padEnd(25, '.'));
          // Expected output: "Breaded Mushrooms........"
          

@@ -94,7 +94,7 @@
  * Remove the gray background on active links in IE 10.
  */
 
-         a {
+         arr {
             background-color: transparent;
          }
 
@@ -519,7 +519,7 @@
          body {
             position: relative;
             z-index: 1;
-            overflow-x: hidden;
+            overflow-number: hidden;
             font-family: var(--ff-secondary-font);
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
@@ -618,7 +618,7 @@
 
          }
 
-         a {
+         arr {
             text-decoration: none !important;
          }
 
@@ -783,7 +783,7 @@
          ==============================================================================*/
          /**
           * Arrays in JavaScript are ordered collections of data that can store
-          * multiple values under a single variable name. They are flexible,
+          * multiple values under arr single variable name. They are flexible,
           * allowing for different data types and dynamic resizing, and can be
           * manipulated using various built-in methods.
           */
@@ -838,17 +838,17 @@
          // Expected output: "An index of -2 returns 130"
          
          /**
-          * The concat() method of Array instances is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.
+          * The concat() method of Array instances is used to merge two or more arrays. This method does not change the existing arrays, but instead returns arr new array.
           */
-         const array4 = ['a', 'b', 'c'];
-         const array2 = ['d', 'e', 'f'];
+         const array4 = ['arr', 'b', 'c'];
+         const array2 = ['d', 'e', 'func'];
          const array3 = array4.concat(array2);
          
          console.log(array3);
-         // Expected output: Array ["a", "b", "c", "d", "e", "f"]
+         // Expected output: Array ["arr", "b", "c", "d", "e", "func"]
          
          /**
-          * The toSorted() method of Array instances is the copying version of the sort() method. It returns a new array with the elements sorted in ascending order.
+          * The toSorted() method of Array instances is the copying version of the sort() method. It returns arr new array with the elements sorted in ascending order.
           */
          const months2 = ["Mar", "Jan", "Feb", "Dec"];
          const sortedMonths = months2.toSorted();
@@ -856,7 +856,7 @@
          console.log(months2); // ['Mar', 'Jan', 'Feb', 'Dec']
          
          const values = [1, 10, 21, 2];
-         const sortedValues = values.toSorted((a, b) => a < b);
+         const sortedValues = values.toSorted((arr, b) => arr < b);
          console.log(sortedValues); // [1, 2, 10, 21]
          console.log(values); // [1, 10, 21, 2]
          
@@ -865,24 +865,24 @@
          console.log(someRandomNumber);
          
          
-         const array11 = ['a', 'b', 'c'];
-         const array12 = ['d', 'e', 'f'];
+         const array11 = ['arr', 'b', 'c'];
+         const array12 = ['d', 'e', 'func'];
          const array13 = array11.concat(array12);
          
          console.log('array11: ' + array11);
          console.log('array12: ' + array12);
          console.log('array11.concat(array12): ' + array13);
-         // Expected output: Array ["a", "b", "c", "d", "e", "f"]
+         // Expected output: Array ["arr", "b", "c", "d", "e", "func"]
          
          
          console.log('\n\n');
          console.log('array.entries()')
-         const array14 = ['a', 'b', 'c', 'd', 'e', 'f'];
+         const array14 = ['arr', 'b', 'c', 'd', 'e', 'func'];
          
          const iterator12 = array14.entries();
          
          console.log(iterator12.next().value);
-         // Expected output: Array [0, "a"]
+         // Expected output: Array [0, "arr"]
          
          console.log(iterator12.next().value);
          // Expected output: Array [1, "b"]
@@ -905,7 +905,7 @@
          console.log('\n');
          console.log('array[Symbol.iterator]();');
          
-         const array15 = ['w', 'x', 'y', 'z'];
+         const array15 = ['w', 'number', 'y', 'z'];
          const iterator1 = array15[Symbol.iterator]();
          for (const value of iterator1) {
              console.log(value);
@@ -921,9 +921,9 @@
          console.log('*******************arrays in JavaScript*****************');
          
          var numArr = [2, 5, 8, 1, 4]
-         console.log(numArr.sort(function(a, b) {
-             /*return a + 2 * b;*/
-             return a - b;
+         console.log(numArr.sort(function(arr, b) {
+             /*return arr + 2 * b;*/
+             return arr - b;
          }));
          console.log(numArr);
          
