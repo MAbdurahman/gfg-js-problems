@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -793,7 +793,7 @@
                }
          }//end of sumOfNumbers Function
             
-         let number1 = 5;
+         let number1 = 5000000;
          let answer1 = sumOfNumbers(number1);
          console.log(`the sum of ${number1} numbers is: `, answer1);
             
@@ -801,6 +801,17 @@
          let answer2 = sumOfNumbers(number2);
          console.log(`the sum of ${number2} numbers is: `, answer2.toPrecision(18));
          
+         console.log('\n');
+         function sumOfNumbersTwo(number) {
+             let sum = 0;
+             for (let i = 0; i <= number; i++) {
+                 sum += i;
+             }
+             return sum;
+         }
+         console.log('\n');
+         console.log(`the sum of ${number1} numbers is: `, sumOfNumbersTwo(number1));
+         console.log(`the sum of ${number2} numbers is: `, sumOfNumbersTwo(number2).toPrecision(18));
          console.log('\n');
          
          /**
@@ -847,7 +858,7 @@
           * @param arr
           * @returns {*}
           */
-         function getLargestNumber(numArr) {
+         function getLargestNumber(arr) {
             let largestNumber = Number.MIN_VALUE;
              for (let i = 0; i < arr.length; i++) {
                  if (largestNumber < arr[i]) {
@@ -868,7 +879,7 @@
           * @param arr
           * @returns {number}
           */
-         function getSmallestNumber(numArr) {
+         function getSmallestNumber(arr) {
              let smallestNumber = Number.MAX_VALUE;
              for (let i = 0; i < arr.length; i++) {
                  if (smallestNumber > arr[i]) {
@@ -888,7 +899,7 @@
           * @param arr
           * @returns {number[]}
           */
-         function getLargestTwoNumbers(numArr) {
+         function getLargestTwoNumbers(arr) {
              let maxOne = Number.MIN_VALUE;
              let maxTwo = Number.MIN_VALUE;
              
@@ -910,7 +921,7 @@
           * @param arr
           * @returns {number[]}
           */
-         function getMinAndMaxValue(numArr) {
+         function getMinAndMaxValue(arr) {
              let maxValue = Number.MIN_VALUE;
              let minValue = Number.MAX_VALUE;
              arr.forEach((value) => {
@@ -932,6 +943,75 @@
          
          const twoLargestValues = getLargestTwoNumbers(array1);
          console.log(`the two largest values of ${array1} is: `, twoLargestValues);
+         console.log('\n');
+         
+         function getPositiveAverage(arr) {
+             const initialValue = 0;
+             const positiveValues = [];
+             
+             for (let i = 0; i < arr.length; i++) {
+                 if (0 <= arr[i]) {
+                     positiveValues.push(arr[i]);
+                 }
+             }
+             
+             const count = positiveValues.length;
+             
+             const sumOfPositiveValues =
+                     positiveValues.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
+             
+             return sumOfPositiveValues / count;
+             
+         }//end of getPositiveAverage Function
+         
+         const array2 = [-12, 8, -7, 6, 12, -9, 14];
+         console.log('average of positionValues', getPositiveAverage(array2));
+         
+         function countNumberOfZeroes(arr) {
+             let count = 0;
+             for (let i = 0; i < arr.length; i++) {
+                 if (arr[i] === 0) {
+                     count++;
+                 }
+             }
+             return count;
+             
+         }//end of countNumberOfZeros Function
+         
+         const array3 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0];
+         console.log(`the number of zeroes in ${array3} is: `, countNumberOfZeroes(array3));
+         
+         function getArraySortedOrNot(arr) {
+             let arrayCopy = [...arr];
+             arrayCopy.sort((a, b) => a - b);
+
+             for (let i = 0; i < arr.length; i++) {
+                 if (arrayCopy[i] !== arr[i]) {
+                     return false;
+                 }
+             }
+             return true;
+         }//end of getArraySortedOrNot Function
+         
+         const array4 = [-999, -997, -996, -993, -992, -989, -987, -986, -982, -982, -979, -979, -977, -977, -975, -975, -974, -970, -966, -964, -961, -951, -949, -947, -941, -940, -940, -938, -937, -933, -932, -932, -931, -929, -927, -927, -926, -923, -923, -987];
+         
+         console.log(`the array of numbers ${array4} is sorted is: `, getArraySortedOrNot(array4));
+         
+         console.log('\n\n');
+         
+         function findTargetInArray(array, target) {
+             for (let i = 0; i < array.length; i++) {
+                 if (array[i] === target) {
+                     return i;
+                 }
+             }
+             return -1;
+             
+         }//end of findTargetInArray Function
+         
+         const array5 = [10, 8, 30];
+         const target = 6;
+         console.log(`the target of ${target} in array ${array5} is: `, findTargetInArray(array5, target));
          console.log('\n');
          
          /**
@@ -1057,7 +1137,7 @@
           * @param arr
           * @returns {*}
           */
-         function swapNumbers(numArr) {
+         function swapNumbers(arr) {
              return arr.reverse();
              
          }//end of swapNumbers Function

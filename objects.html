@@ -820,7 +820,7 @@
     
     
     /*
-    The following code creates an object with three properties and the keys are "foo", "age" and "baz". The values of these keys are a string "bar", the number 42, and another object.
+    The following code creates an object with three properties, and the keys are "foo", "age" and "baz". The values of these keys are a string "bar", the number 42, and another object.
      */
     const object5 = {
         foo: "bar",
@@ -838,8 +838,171 @@
     
     const mergedObj = { ...obj1, ...obj2 };
     // { foo: "baz", x: 42, y: 13 }
-
-
+    
+    /*===============================================================
+        Using Functions As Object Properties
+    ==================================================================*/
+    const obj = {
+        name: 'Prakash Sakari',
+        greetMessage: function() {
+            console.log(`Hello, I'm ${this.name} from GeeksForGeeks!`);
+        }
+    };
+    
+    // Calling the function property
+    obj.greetMessage(); // Output: Hello, I'm Prakash Sakari from GeeksForGeeks!
+    
+    /**
+     * Using Method Shorthand
+     * JavaScript provides a shorthand method to define functions within objects.
+     */
+    const obj3 = {
+        name: 'Prakash Sakari',
+        greetMessage() {
+            console.log(`Hello, I'm ${this.name}. Welcome to GeeksForGeeks!`);
+        }
+    }
+    // Calling the function property
+    obj3.greetMessage(); //Hello, I'm Prakash Sakari. Welcome to GeeksForGeeks!
+    
+    /**
+     * Example with Multiple Properties and Methods
+     * Let's create a more complex object with multiple properties and methods.
+     */
+    const person1 = {
+        name: 'Prakash Sakari',
+        age: 34,
+        job: 'Instructor',
+        courses: ['HTML', 'CSS', 'JavaScript', 'ReactJS', 'Node.js'],
+        greet() {
+            console.log(`Hello, I'm ${this.name} from GeeksForGeeks! And I'm your ${this.job}.`);
+        },
+        displayCourses() {
+            console.log(`${this.name} teaches the following courses: ${this.courses}`);
+            
+        }
+    };
+    
+    // Calling the methods
+    person1.greet();
+    // Output: Hello, I'm Prakash Sakari!r from GeeksForGeeks! And I'm your Instructor.
+    person1.displayCourses();
+    // Output: Prakash Sakari teaches the following courses: HTML, CSS, JavaScript, ReactJS, Node.js
+    
+    const person2 = {
+        name: 'Jane Doe',
+        age: 35,
+        job: 'Instructor',
+        courses: ['Algebra', 'Calculus', 'Discrete Mathematics'],
+        greet() {
+            console.log(`Hi, I'm ${this.name} from GeeksForGeeks! And I'm your ${this.job}.`);
+        },
+        displayCourses() {
+            console.log(`${this.name} teaches the following courses: ${this.courses}`);
+        }
+    }
+    person2.greet();
+    person2.displayCourses();
+    console.log('\n\n');
+    /*===============================================================
+          Shallow Copy and Deep Copy
+    ==================================================================*/
+    //Example of Shallow Copy
+    const person3 = {
+        name: 'Prakash',
+        age: 101,
+        address: {
+            city: 'Mumbai',
+            state: 'Maharashtra'
+        }
+    };
+    
+    const person4 = person3; // Shallow copy
+    person4.name = 'Ashish';
+    
+    console.log(person3.name); // Output: Ashish
+    console.log(person4.name); // Output: Ashish
+    
+    /************************* example of deep copy *************************/
+    console.log('\n\n');
+    /**
+     * Methods to Create Deep Copy
+     * Using JSON methods:
+     */
+    const person5 = {
+        name: 'Prakash',
+        age: 101,
+        address: {
+            city: 'Mumbai',
+            state: 'Maharashtra'
+        }
+    };
+    
+    const person6 = JSON.parse(JSON.stringify(person5)); // Deep copy
+    person6.name = 'Ashish';
+    person6.address.city = 'Saint Louis';
+    
+    console.log(person5.name); // Output: Prakash
+    console.log(person6.name); // Output: Ashish
+    console.log(person5.address.city); // Output: Mumbai
+    console.log(person6.address.city); // Output: Saint Louis
+    
+    /**
+     * Methods to Create Deep Copy
+     * Using a custom deep copy function:
+     */
+    function deepCopy(obj) {
+        if (obj === null || typeof obj !== 'object') {
+            return obj;
+        }
+        const copy = Array.isArray(obj) ? [] : {};
+        for (const key in obj) {
+            if (obj.hasOwnProperty(key)) {
+                copy[key] = deepCopy(obj[key]);
+            }
+        }
+        return copy;
+    }
+    
+    const person7 = {
+        name: 'Prakash',
+        age: 101,
+        address: {
+            city: 'Mumbai',
+            state: 'Maharashtra'
+        }
+    };
+    
+    const person8 = deepCopy(person7); // Custom deep copy
+    person8.name = 'Ashish';
+    person8.address.city = 'Saint Louis';
+    console.log('\n\n');
+    
+    console.log(person7.name); // Output: Prakash
+    console.log(person8.name); // Output: Ashish
+    console.log('\n\n');
+    console.log(person7.address.city); // Output: Mumbai
+    console.log(person8.address.city); // Output: Saint Louis
+    
+    /*===============================================================
+          Object assign
+          The Object.assign method creates a shallow copy of an object.
+           It is useful for copying objects that do not contain nested objects.
+    ==================================================================*/
+    console.log('\n\n');
+    
+    /************************* example of object assign *************************/
+    const person9 = {
+        name: 'Prakash',
+        age: 101
+    };
+    
+    const person10 = Object.assign({}, person9); // Shallow copy
+    person10.name = 'Ashish';
+    
+    console.log(person9.name); // Output: Prakash
+    console.log(person10.name); // Output: Ashish
+    
 
 </script>
 </body>

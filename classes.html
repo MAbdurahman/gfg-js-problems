@@ -511,7 +511,6 @@
             font-size: 100%;
             scroll-behavior: smooth;
 
-
          }
 
          /*16px*/
@@ -782,7 +781,55 @@
                 classes in JavaScript
                 Classes are arr template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but also have some syntax and semantics that are unique to classes.
                 Classes are in fact "special functions", and just as you can define function expressions and function declarations, arr class can be defined in two ways: arr class expression or arr class declaration.
+                
+                Classes in JavaScript are a blueprint for creating objects, introduced in ES6. They encapsulate data and behavior by defining properties and methods, enabling object-oriented programming. Classes simplify the creation of objects and inheritance, making code more organized and reusable.
+                
+                A JavaScript class is not an object. It is a template for JavaScript objects.
+                
+                When you have a class, you can use the class to create objects:
          ==============================================================================*/
+      
+         
+         /*===============================================================
+             syntax
+            class ClassName {
+             constructor() {  }
+            }
+            
+             example
+             class Car {
+                constructor(name, year) {
+                    this.name = name;
+                    this.year = year;
+                }
+               }
+               
+             Use the Car class to create two Car objects
+             const myCar1 = new Car("Ford", 2014);
+             const myCar2 = new Car("Audi", 2019);
+             
+             
+             Class with methods syntax
+             class ClassName {
+                 constructor() { ... }
+                 method_1() { ... }
+                 method_2() { ... }
+                 method_3() { ... }
+               }
+               
+               Create a Class method named "age", that returns the Car age:
+               class Car {
+                constructor(name, year) {
+                this.name = name;
+                this.year = year;
+                }
+                 age() {
+                    const date = new Date();
+                    return date.getFullYear() - this.year;
+                  }
+                }
+
+           ==================================================================*/
 
 
 
