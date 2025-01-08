@@ -797,7 +797,7 @@
     ==================================================================*/
     
     /************************* object initializer *************************/
-    const object1 = { a: 'foo', b: 42, c: {} };
+    const object1 = {a: 'foo', b: 42, c: {}};
     
     console.log(object1.a);
     // Expected output: "foo"
@@ -805,12 +805,12 @@
     const a = 'foo';
     const b = 42;
     const c = {};
-    const object2 = { a: a, b: b, c: c };
+    const object2 = {a: a, b: b, c: c};
     
     console.log(object2.b);
     // Expected output: 42
     
-    const object3 = { a, b, c };
+    const object3 = {a, b, c};
     
     console.log(object3.a);
     // Expected output: "foo"
@@ -823,20 +823,20 @@
     The following code creates an object with three properties, and the keys are "foo", "age" and "baz". The values of these keys are a string "bar", the number 42, and another object.
      */
     const object5 = {
-        foo: "bar",
+        foo: 'bar',
         age: 42,
-        baz: { myProp: 12 },
+        baz: {myProp: 12}
     };
     
     
     //Spread properties in objects
-    const obj1 = { foo: "bar", x: 42 };
-    const obj2 = { foo: "baz", y: 13 };
+    const obj1 = {foo: 'bar', x: 42};
+    const obj2 = {foo: 'baz', y: 13};
     
-    const clonedObj = { ...obj1 };
+    const clonedObj = {...obj1};
     // { foo: "bar", x: 42 }
     
-    const mergedObj = { ...obj1, ...obj2 };
+    const mergedObj = {...obj1, ...obj2};
     // { foo: "baz", x: 42, y: 13 }
     
     /*===============================================================
@@ -844,7 +844,7 @@
     ==================================================================*/
     const obj = {
         name: 'Prakash Sakari',
-        greetMessage: function() {
+        greetMessage: function () {
             console.log(`Hello, I'm ${this.name} from GeeksForGeeks!`);
         }
     };
@@ -1003,6 +1003,22 @@
     console.log(person9.name); // Output: Prakash
     console.log(person10.name); // Output: Ashish
     
+    
+    function swapImages() {
+        const image = document.createElement('img');
+        image.setAttribute('src', 'image-1.jpg');
+        
+        if (image.src.match('image-1.jpg')) {
+            image.src = 'image-2.jpg';
+        } else {
+            image.src = 'image-1.jpg';
+        }
+    }//end of swapImages Function
+    
+    console.log(window);
+    
+    
+
 
 </script>
 </body>

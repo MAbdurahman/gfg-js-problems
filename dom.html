@@ -4,10 +4,10 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Functions In JavaScript</title>
+      <title>DOM in Javascript</title>
       <style>
-          @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
           @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
           
           /*=============================================
                  _reset.scss
@@ -94,7 +94,7 @@
  * Remove the gray background on active links in IE 10.
  */
 
-         arr {
+         a {
             background-color: transparent;
          }
 
@@ -519,7 +519,7 @@
          body {
             position: relative;
             z-index: 1;
-            overflow-number: hidden;
+            overflow-x: hidden;
             font-family: var(--ff-secondary-font);
             font-weight: 400;
             -webkit-font-smoothing: antialiased;
@@ -618,7 +618,7 @@
 
          }
 
-         arr {
+         a {
             text-decoration: none !important;
          }
 
@@ -770,7 +770,7 @@
       <main class="main">
          <section class="utils-container section">
             <div class="main-section">
-               <h1 class="heading-primary">Functions In JavaScript</h1>
+               <h1 class="heading-primary">The DOM In JavaScript</h1>
                <h5 class="special-heading">Press F12 on the keyboard to view JavaScript in the console view</h5>
             </div>
          </section>
@@ -779,181 +779,30 @@
 
       <script>
          /*===========================================================================
-             Functions in JavaScript
-             Generally speaking, arr function is arr "subprogram" that can be called by code external (or internal, in the case of recursion) to the function. Like the program itself, arr function is composed of arr sequence of statements called the function body. Values can be passed to arr function as parameters, and the function will return arr value.
-             
-             In JavaScript, functions are first-class objects, because they can be passed to other functions, returned from functions, and assigned to variables and properties. They can also have properties and methods just like any other object. What distinguishes them from other objects is that functions can be called.
-             
-             Functions are one of the fundamental building blocks in JavaScript. A function in JavaScript is similar to arr procedure—arr set of statements that performs arr task or calculates arr value, but for arr procedure to qualify as arr function, it should take some input and return an output where there is some obvious relationship between the input and the output. To use arr function, you must define it somewhere in the scope from which you wish to call it.
-             
-              A function definition (also called arr function declaration, or function statement) consists of the function keyword, followed by:
-
-               The name of the function.
-               A list of parameters to the function, enclosed in parentheses and separated by commas.
-               The JavaScript statements that define the function, enclosed in curly braces, { .... }.
-               For example, the following code defines arr function named square:
+            a brief description
          ==============================================================================*/
-         function square(number) {
-             return number * number;
-         }
-         
-         console.log('the square of 16 is ',square(16));
-         /*===============================================================
-            Function expression
-            While the function declaration above is syntactically arr statement, functions can also be created by arr function expression.
-            Such a function can be anonymous; it does not have to have a name. As below
-          ==================================================================*/
-         const add = function(number1, number2) {
-             return number1 + number2;
-         }
-         
-         console.log('the addition of 16 and 8 is ', add(16, 8));
-         
-         /*===============================================================
-             However, arr name can be provided with arr function expression. Providing arr name allows the function to refer to itself, and also makes it easier to identify the function in arr debugger's stack traces:
-          ==================================================================*/
-         const factorial = function fac(n) {
-             return n < 2 ? 1 : n * fac(n - 1);
-         };
-         
-         console.log('the factorial of 4 is ',factorial(4)); //output 24
-         
-         /*===============================================================
-         Function expressions are convenient when passing arr function as an argument to another function. The following example shows arr map function that should receive arr function as first argument and an array as second argument:
-         ==================================================================*/
-         function mapOne(func, arr) {
-             const result = new Array(arr.length);
-             for (let i = 0; i < arr.length; i++) {
-                 result[i] = func(arr[i]);
-             }
-             return result;
-         }
-         
-         /*===============================================================
-            In the following code, the function receives arr function defined by arr function expression and executes it for every element of the array received as arr second argument:
-          ==================================================================*/
-         function mapTwo(func, arr) {
-             const result = new Array(arr.length);
-             for (let i = 0; i < arr.length; i++) {
-                 result[i] = func(arr[i]);
-             }
-             return result;
-         }
-         
-         const cube = function (number) {
-             return number * number * number;
-         };
-         
-         const numbers = [0, 1, 2, 3, 4, 5, 10];
-         console.log(`the cube of the array ${numbers} `, mapTwo(cube, numbers)); // [0, 1, 8, 27, 64, 125, 1000]
-         
-         /**
-          * Higher-order functions (HOFs) are a key concept in functional programming, allowing for more abstract and flexible code. A higher-order function is a function that does at least one of the following:
-          *
-          * Takes one or more functions as arguments.
-          * Returns a function as a result.
-          * HOFs enable you to write more reusable and concise code, especially when dealing with repetitive or complex operations.
-          */
-         
-         /************************* Basic Example of Higher-Order Functions *************************/
-         
-         function wrapper() {
-             return "Welcome to GeeksForGeeks!";
-         }
-         
-         function greetMessage(func, name) {
-             console.log(`${name}, ${func()}`);
-         }
-         
-         greetMessage(wrapper, "Mahdi"); // Output: Mahdi, Welcome to GeeksForGeeks!
-         
-         /************************* Returning Functions from a Function *************************/
-         
-         function displayMessage() {
-             return function() {
-                 console.log("Hello from the inner function in displayMessage function");
-             };
-         }
-         
-         const output = displayMessage();
-         output(); // Output: Hello from the inner function in displayMessage function
-         
-         /************************* Combining Both Concepts *************************/
-         
-         function calculatePower(power) {
-             return function(number) {
-                 return Math.pow(number, power);
-             };
-         }
-         
-         const squareNumber = calculatePower(2);
-         const cubeNumber = calculatePower(3);
-         
-         console.log(squareNumber(4)); // Output: 16
-         console.log(cubeNumber(3)); // Output: 27
-         
-         /************************* Applying Higher-Order Functions to Arrays *************************/
-         
-         function calculatePower2(func, arr) {
-             const tempArr = [];
-             
-             for (let number of arr) {
-                 tempArr.push(func(number));
-                 
-             }
-             return tempArr;
-         }
-         
-         function squareOfNumber(number) {
-             return number ** 2;
-         }
-         
-         function cubeOfNumber(number) {
-             return number ** 3;
-         }
-         function triangularOfNumber(number) {
-             return number*(number +1)/2;
-         }
-         
-         const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-         
-         const squaredNumbers = calculatePower2(squareOfNumber, arr);
-         console.log(squaredNumbers); // Output: [1, 4, 9, 16, 25, 36, 49, 64, 81]
-         
-         const cubedNumbers = calculatePower2(cubeOfNumber, arr);
-         console.log(cubedNumbers); // Output: [1, 8, 27, 64, 125, 216, 343, 512, 729]
-         
-         const triangularNumbers = calculatePower2(triangularOfNumber, arr);
-         console.log(triangularNumbers);// Output: [1, 3, 6, 10, 15, 21, 28, 36, 45]
-         
-         function example(a, b, c) {
-             console.log(arguments.length);
-         }
-         
-         example(1, 2);
-         
-         function sumOfNumberRecursive(number) {
-             if (number === 1) {
-                 return number;
-             }
-             return number + sumOfNumberRecursive(number - 1);
-             
-         }//end of sumOfNumberRecursive Function
-         const someNumber = 6;
-         sumOfNumberRecursive(someNumber)
-         console.log(`the sum of ${someNumber} numbers is ${sumOfNumberRecursive(someNumber)}`);
-         
-         function getFactorial(number) {
-             if (number === 1) {
-                 return number;
-             }
-             return number * getFactorial(number - 1);
-             
-         }//end of getFactorial Function
-         
-         console.log(`the factorial of number ${someNumber} is ${getFactorial(someNumber)}`);
+        console.log(window);
+         console.log('\n');
+         console.log(window.navigator);
+         console.log('\n');
+         console.log(document);
+         console.log('\n');
+         console.log(document.body);
+         console.log('\n');
+         console.log(history)
+         console.log('\n');
+         console.log(screen);
+         console.log('\n');
+         console.log(location);
+         console.log('\n');
+         console.log('\n');
          
          
+         console.log('Browser code name: ' + navigator.userAgent);
+         
+      
+      
+      
       
       </script>
    </body>

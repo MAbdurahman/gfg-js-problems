@@ -985,8 +985,13 @@
              let arrayCopy = [...arr];
              arrayCopy.sort((a, b) => a - b);
 
-             for (let i = 0; i < arr.length; i++) {
+             /*for (let i = 0; i < arr.length; i++) {
                  if (arrayCopy[i] !== arr[i]) {
+                     return false;
+                 }
+             }*/
+             for (let index in arrayCopy) {
+                 if (arrayCopy[index] !== arr[index]) {
                      return false;
                  }
              }
