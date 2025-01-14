@@ -851,8 +851,50 @@
              console.log(str, encryptStr)
          }//end of getEncodedString
          
+         
          const inputString = 'prakash';
          getEncodedString(inputString, 2);
+         
+         
+         function getArrayOfNames(arr) {
+             return arr.filter(item => item?.numberOfYears > 3).map(item => item.name);
+             
+         }//end of getArrayOfNames Function
+         
+         
+         function generateSumOfEvenAndOddNumbers(array) {
+             return array.reduce((acc, curr) =>  curr % 2 === 0 ? {...acc, even: acc.even + curr} : {...acc, odd: acc.odd + curr}, {even: 0, odd: 0});
+         }
+         
+         function getAllSubStrings(str) {
+             for (let i = 0; i < str.length; i ++) {
+                 for (let j = i + 1; j <= str.length; j ++) {
+                     let subString = str.slice(i, j);
+                     console.log(subString);
+                 }
+             }
+         }
+         
+         
+         function findSumOfNumbersGreaterThan(array, number) {
+             let arr = [...array];
+             return arr.reduce((acc, curr) => curr > number ? acc + curr : acc, 0);
+         }
+         
+         console.log('********* get all substrings ************');
+         const inputString2 = 'prakash';
+         getAllSubStrings(inputString2);
+         
+         console.log('********* find sum of numbers greater than  ************');
+         const inputString3 = [10, 17, 61, 54, 44, 32, 39, 23];
+         let target = 40;
+         let sumOfNumbers = findSumOfNumbersGreaterThan(inputString3, target);
+         console.log(`sum of numbers greater ${target} is `,sumOfNumbers);
+         console.log('********* find sum of numbers greater than  ************');
+         
+         
+         
+         
 
       </script>
    </body>
