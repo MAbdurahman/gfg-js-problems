@@ -892,10 +892,66 @@
          console.log(`sum of numbers greater ${target} is `,sumOfNumbers);
          console.log('********* find sum of numbers greater than  ************');
          
+         const arrayWithDuplicates = [1, 2, 2, 3, 4, 4, 5];
+         const uniqueArray = arrayWithDuplicates.reduce((accumulator, currentValue) => {
+             if (!accumulator.includes(currentValue)) {
+                 accumulator.push(currentValue);
+             }
+             return accumulator;
+         }, []);
+         console.log(uniqueArray); // Output: [1, 2, 3, 4, 5]
+         
+         
+         // Given array
+         let a = [10, 20, 20, 20, 30, 30, 40, 50];
+         
+         // Use filter and return array with unique values
+         let a1 = a.filter((e, i, self) => i === self.indexOf(e));
+         
+         // Display the updated array
+         console.log("Updated Array: ", a1);
+         
+         
+         // Given array
+         let a = [ 10, 20, 20, 30, 40, 50, 50 ];
+         
+         // Create set of unique values
+         // using Set constructor
+         let s = new Set(a);
+         
+         // Convert back the set to array
+         let a1 = [...s]
+         
+         // Display the updated array
+         console.log("Updated Array: ", a1);
          
          
          
-
+         // Given array
+         let a = [10, 20, 20, 20, 30, 30, 40, 50];
+         
+         // Initialize epmty array to store unique values
+         let a1 = [];
+         
+         // Iterate over the array to get unique values
+         for (let i = 0; i < a.length; i++) {
+             
+             // Check if the element exist in the new array
+             if (!a1.includes(a[i])) {
+                 
+                 // If not then push the element to new array
+                 a1.push(a[i]);
+             }
+         }
+         
+         // Display updated array
+         console.log("Updated Array: ", a1);
+         
+         
+         
+         
+      
+      
       </script>
    </body>
 
